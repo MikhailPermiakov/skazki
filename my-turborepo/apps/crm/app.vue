@@ -9,5 +9,6 @@ useHead({
 </script>
 
 <template>
-  <Page :app-name="name" />
+<!--  <Page :app-name="name" />-->
+  <div>1111</div>
 </template>
