@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Page } from "ui";
-import { name } from "./package.json";
 
 useHead({
   title: "Create Turborepo (vue-nuxt:docs)",
@@ -9,7 +7,6 @@ useHead({
 </script>
 
 <template>
-<!--  <Page :app-name="name" />-->
   <div>
     <div>2222</div>
     <Button label="Verify2" />
