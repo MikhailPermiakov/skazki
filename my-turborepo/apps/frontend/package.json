@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "packageManager": "npm@10.9.2",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port 3002",
@@ -12,10 +13,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@primevue/themes": "^4.2.4",
+    "primevue": "^4.2.4"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@primevue/nuxt-module": "^4.2.4",
     "eslint": "^8.57.0",
     "eslint-config-custom": "*",
     "nuxt": "^3.10.3",

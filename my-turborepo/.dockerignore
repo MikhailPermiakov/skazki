@@ -1,0 +1,30 @@
+# Исключаем директории с локальными настройками и кэш
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Исключаем локальные окружения
+.env
+.env.local
+.env.*.local
+
+# Исключаем временные файлы и кэш
+.DS_Store
+.vscode
+.idea
+*.log
+output
+dist
+coverage
+
+# Исключаем файлы из Git
+.git
+.gitignore
+
+# Исключаем файлы Docker (если не нужны в контейнере)
+docker-compose.override.yml
+
+# Исключаем другие временные файлы
+*.swp
+*.tmp
