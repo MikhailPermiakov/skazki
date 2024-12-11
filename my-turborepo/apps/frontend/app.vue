@@ -10,5 +10,9 @@ useHead({
 
 <template>
 <!--  <Page :app-name="name" />-->
-  <div>2222</div>
+  <div>
+    <div>2222</div>
+    <Button label="Verify2" />
+
+  </div>
 </template>

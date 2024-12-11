@@ -11,4 +11,5 @@ useHead({
 <template>
 <!--  <Page :app-name="name" />-->
   <div>1111</div>
+  <Button label="Verify1" />
 </template>

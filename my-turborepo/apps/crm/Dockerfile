@@ -1,7 +1,7 @@
 FROM node:22
 WORKDIR /app
-COPY . .
+COPY package.json ./
 RUN npm install
-RUN npm run build
-CMD ["npm", "run", "dev"]  // dev
+COPY . .
+CMD ["npm", "run", "dev"]
 # CMD ["npm", "run", "start"] // prod
