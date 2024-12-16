@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/styles.css'],
   modules: [
-    '@primevue/nuxt-module'
+    '@primevue/nuxt-module',
+    "@nuxt/image"
   ],
   primevue: {
     options: {
