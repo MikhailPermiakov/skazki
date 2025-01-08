@@ -1,13 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
 import Aura from '@primevue/themes/aura';
 
 export default defineNuxtConfig({
+  compatibilityDate: process.env.COMPATIBILITY_DATE,
+  ssr: false,
   devtools: { enabled: true },
-  css: ['~/assets/css/styles.css'],
+  css: ['~/assets/css/root-styles.css', '~/assets/css/tailwind-primevue-styles.css', '~/assets/css/primevue-icons.css'],
   modules: [
     '@primevue/nuxt-module',
-    "@nuxt/image"
+    "@nuxt/image",
   ],
   primevue: {
     options: {
@@ -28,5 +29,11 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  runtimeConfig: {
+    apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
+    public: {
+      apiBase: process.env.API_URL,
+    }
   },
 });
