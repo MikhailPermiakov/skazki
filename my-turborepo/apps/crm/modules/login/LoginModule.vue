@@ -19,10 +19,9 @@
 </template>
 <script setup lang="ts">
 import { Form, FormField, FormSubmitEvent } from '@primevue/forms';
-import { zodResolver } from '@primevue/forms/resolvers/zod';
+import zodResolver from '@primevue/forms/resolvers/zod';
 import { z } from 'zod';
 import { useToast } from 'primevue/usetoast';
-import { useAsyncData } from '#app';
 
 const config = useRuntimeConfig();
 const toast = useToast();
