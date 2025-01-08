@@ -1,11 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import Aura from '@primevue/themes/aura';
-import path from 'path';
 
 export default defineNuxtConfig({
+  compatibilityDate: process.env.COMPATIBILITY_DATE,
   ssr: true,
   devtools: { enabled: true },
-  css: ['~/assets/css/styles.css'],
+  css: ['~/assets/css/root-styles.css', '~/assets/css/tailwind-primevue-styles.css', '~/assets/css/primevue-icons.css'],
   modules: [
     '@primevue/nuxt-module',
     "@nuxt/image"
@@ -30,16 +30,4 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  // hooks: {
-  //   "pages:extend"(pages) {
-  //     pages.push(
-  //       {
-  //         name: "library",
-  //         path: "/:slug*/library",
-  //         file: path.resolve(__dirname, "pages/library.vue"),
-  //       },
-  //     )
-  //   },
-  // },
 });
-

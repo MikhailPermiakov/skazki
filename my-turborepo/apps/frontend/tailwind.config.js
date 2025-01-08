@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   content: [
     "./components/**/*.{js,vue,ts}",
     "./modules/**/*.{js,vue,ts}",
@@ -7,6 +7,7 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
     "./error.vue",
+    './node_modules/primevue/**/*.{js,ts,vue}', // Сканируем файлы PrimeVue
   ],
-  plugins: [require('tailwindcss-primeui')]
+  // plugins: [require('tailwindcss-primeui')]
 };
