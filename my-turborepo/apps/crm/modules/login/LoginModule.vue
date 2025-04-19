@@ -19,7 +19,7 @@
 </template>
 <script setup lang="ts">
 import { Form, FormField, FormSubmitEvent } from '@primevue/forms';
-import zodResolver from '@primevue/forms/resolvers/zod';
+import { zodResolver } from '@primevue/forms/resolvers/zod';
 import { z } from 'zod';
 import { useToast } from 'primevue/usetoast';
 
@@ -36,24 +36,40 @@ const resolver =  zodResolver(
 );
 
 const onFormSubmit = async (event: FormSubmitEvent) => {
-  console.log('event', event);
-
-  // if (valid) {
-  //   toast.add({ severity: 'success', summary: 'Form is submitted.', life: 3000 });
-  // }
+  if (event.valid) {
+    const { username, password } = event.values;
+    try {
+      const response = await $fetch(`${config.public.apiBase}/auth/login`, {
+        body: {username, password},
+        method: 'POST',
+        // mode: 'no-cors',
+        // headers: {
+        //   'Content-Type': 'application/json',
+        // },
+        // responseType: 'json',
+        onResponse({ request, response, options }) {
+          console.log('Request:', request);
+          console.log('Response:', response, typeof(response));
+        }
+      });
+      console.log('response1', response);
+    } catch (e) {
+      console.error('errorFetch!!!', e);
+    }
+    // toast.add({ severity: 'success', summary: 'Form is submitted.', life: 3000 });
+  }
 };
 
 const onFormSubmitTest = async () => {
   try {
-    const response = await $fetch(`${config.public.apiBase}`, {
+    const response = await $fetch(`${config.public.apiBase}/auth/profile`, {
       method: 'GET',
-      mode: 'no-cors',
+      // mode: 'no-cors',
     });
     console.log('response', response);
+    result.value = response;
   } catch (e) {
     console.error('errorFetch', e);
   }
 }
-
-watchEffect(()=> console.log('result', result))
 </script>
