@@ -22,12 +22,9 @@ export class AuthController {
     return this.authService.signIn(signInDto.username, signInDto.password);
   }
 
-  // @UseGuards(AuthGuard)
+  @UseGuards(AuthGuard)
   @Get('profile')
-  getProfile() {
-    return 'hello 2';
+  getProfile(@Request() req) {
+    return req.user;
   }
-  // getProfile(@Request() req) {
-  //   return req.user;
-  // }
 }
